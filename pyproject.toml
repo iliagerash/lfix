@@ -24,6 +24,8 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
     "typer>=0.12",
 ]
 
@@ -37,6 +39,7 @@ dev = [
     "mypy>=1.13",
     "pytest>=8",
     "ruff>=0.8",
+    "types-PyYAML>=6.0",
 ]
 
 [project.scripts]
@@ -60,3 +63,4 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.11"
 strict = true
 files = ["src", "tests"]
+plugins = ["pydantic.mypy"]

@@ -1,0 +1,21 @@
+# AI Codebase Scan
+
+47 files, 12 model calls, 8 schema files
+
+## HIGH `src/ai/resume-parser.ts:14`
+
+Deprecated model: claude-sonnet-4-20250514
+
+EOL: 2026-08-01. Successor: claude-sonnet-4-6.
+
+Pin to claude-sonnet-4-6.
+
+## MEDIUM `src/ai/classifier.ts:8`
+
+Model alias "latest" tracks provider updates silently.
+
+Pin to a versioned model ID for reproducible behavior.
+
+---
+
+1 issue · 1 warning · 0 suggestions

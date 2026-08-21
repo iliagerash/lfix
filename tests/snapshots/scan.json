@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "scan",
+  "title": "AI Codebase Scan",
+  "cli_version": "0.1.0",
+  "metadata_version": "2026.08.1",
+  "duration_ms": 0,
+  "counts": {
+    "files": 47,
+    "model_calls": 12,
+    "schema_files": 8
+  },
+  "findings": [
+    {
+      "rule_id": "model.deprecated",
+      "severity": "high",
+      "message": "Deprecated model: claude-sonnet-4-20250514",
+      "explanation": "EOL: 2026-08-01. Successor: claude-sonnet-4-6.",
+      "suggestion": "Pin to claude-sonnet-4-6.",
+      "location": {
+        "path": "src/ai/resume-parser.ts",
+        "line": 14,
+        "column": null,
+        "snippet": null
+      },
+      "extra": {
+        "eol": "2026-08-01",
+        "successor": "claude-sonnet-4-6"
+      }
+    },
+    {
+      "rule_id": "model.risky_alias",
+      "severity": "medium",
+      "message": "Model alias \"latest\" tracks provider updates silently.",
+      "explanation": "",
+      "suggestion": "Pin to a versioned model ID for reproducible behavior.",
+      "location": {
+        "path": "src/ai/classifier.ts",
+        "line": 8,
+        "column": null,
+        "snippet": null
+      },
+      "extra": {}
+    }
+  ]
+}
