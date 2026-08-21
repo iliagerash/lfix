@@ -8,14 +8,23 @@ A local-first CLI — **ESLint + pytest for LLM integrations**. Your application
 
 ## Install
 
-Python 3.11 or newer.
+Python 3.11 or newer. Install with **pipx** so `lfix` is on your PATH and works from any folder:
 
 ```bash
-git clone https://github.com/iliagerash/lfix.git
-cd lfix
-pip install -e .
+pipx install git+https://github.com/iliagerash/lfix.git
 lfix --version
 ```
+
+From a local clone (editable: the command tracks this checkout):
+
+```bash
+cd lfix
+pipx install --editable .
+```
+
+After that, `cd` into any project and run `lfix scan`. You do not need to stay in this repo.
+
+Without pipx, `python3 -m pip install --user git+https://github.com/iliagerash/lfix.git` also works if `$(python3 -m site --user-base)/bin` is on your PATH.
 
 No account. No API keys. No telemetry.
 
