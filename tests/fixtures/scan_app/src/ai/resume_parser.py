@@ -1,0 +1,3 @@
+"""Resume parser."""
+
+MODEL = "claude-sonnet-4-20250514"
