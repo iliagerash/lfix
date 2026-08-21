@@ -1,0 +1,741 @@
+[
+  {
+    "id": "gpt-5.6-sol",
+    "provider": "openai",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5.6-terra",
+    "provider": "openai",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5.6-luna",
+    "provider": "openai",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5-2025-08-07",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-sol",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5-mini-2025-08-07",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-terra",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5-nano-2025-08-07",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-luna",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5-pro-2025-10-06",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o3-2025-04-16",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o3-pro-2025-06-10",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-12-11",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-0613",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-turbo",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-turbo-2024-04-09",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4o-2024-05-13",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-3.5-turbo-0125",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-terra",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-3.5-turbo-1106",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-09-28",
+    "successor": "gpt-5.6-terra",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-3.5-turbo-instruct",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-09-28",
+    "successor": "gpt-5.6-terra",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o1-2024-12-17",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o1",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o3-mini-2025-01-31",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o3-mini",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o4-mini-2025-04-16",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-terra",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "o4-mini",
+    "provider": "openai",
+    "status": "deprecated",
+    "eol": "2026-10-23",
+    "successor": "gpt-5.6-terra",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "chatgpt-4o-latest",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-02-17",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5-chat-latest",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-07-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5.1-chat-latest",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-07-23",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-5.2-chat-latest",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-08-10",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-0314",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-03-26",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-0125-preview",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-03-26",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "gpt-4-turbo-preview",
+    "provider": "openai",
+    "status": "eol",
+    "eol": "2026-03-26",
+    "successor": "gpt-5.6-sol",
+    "kind": "api",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+  },
+  {
+    "id": "claude-sonnet-5",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-sonnet-4-6",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-sonnet-4-5-20250929",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-5",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-8",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-7",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-6",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-5-20251101",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-haiku-4-5-20251001",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-fable-5",
+    "provider": "anthropic",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-sonnet-4-20250514",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-06-15",
+    "successor": "claude-sonnet-4-6",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-20250514",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-06-15",
+    "successor": "claude-opus-4-8",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-opus-4-1-20250805",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-08-05",
+    "successor": "claude-opus-4-8",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-7-sonnet-20250219",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-02-19",
+    "successor": "claude-sonnet-4-6",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-5-haiku-20241022",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-02-19",
+    "successor": "claude-haiku-4-5-20251001",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-haiku-20240307",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-04-20",
+    "successor": "claude-haiku-4-5-20251001",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-5-sonnet-20241022",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2025-10-28",
+    "successor": "claude-sonnet-4-6",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-5-sonnet-20240620",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2025-10-28",
+    "successor": "claude-sonnet-4-6",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-opus-20240229",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2026-01-05",
+    "successor": "claude-opus-4-8",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-3-sonnet-20240229",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2025-07-21",
+    "successor": "claude-sonnet-4-6",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-2.1",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2025-07-21",
+    "successor": "claude-opus-4-8",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "claude-2.0",
+    "provider": "anthropic",
+    "status": "eol",
+    "eol": "2025-07-21",
+    "successor": "claude-opus-4-8",
+    "kind": "api",
+    "source": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+  },
+  {
+    "id": "gemini-3.6-flash",
+    "provider": "gemini",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-3.5-flash",
+    "provider": "gemini",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-3.1-flash-lite",
+    "provider": "gemini",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-2.5-flash",
+    "provider": "gemini",
+    "status": "current",
+    "structured_output": true,
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-2.0-flash",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2026-06-01",
+    "successor": "gemini-3.6-flash",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-2.0-flash-001",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2026-06-01",
+    "successor": "gemini-3.6-flash",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-2.0-flash-lite",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2026-06-01",
+    "successor": "gemini-3.1-flash-lite",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-2.0-flash-lite-001",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2026-06-01",
+    "successor": "gemini-3.1-flash-lite",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-1.5-pro",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2025-09-24",
+    "successor": "gemini-3.6-flash",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-1.5-flash",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2025-09-24",
+    "successor": "gemini-3.6-flash",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "gemini-1.5-flash-8b",
+    "provider": "gemini",
+    "status": "eol",
+    "eol": "2025-09-24",
+    "successor": "gemini-3.1-flash-lite",
+    "kind": "api",
+    "source": "https://ai.google.dev/gemini-api/docs/deprecations"
+  },
+  {
+    "id": "openai/gpt-oss-120b",
+    "provider": "openai",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/openai/gpt-oss-120b",
+    "structured_output": true,
+    "aliases": [
+      "gpt-oss-120b"
+    ]
+  },
+  {
+    "id": "openai/gpt-oss-20b",
+    "provider": "openai",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/openai/gpt-oss-20b",
+    "structured_output": true,
+    "aliases": [
+      "gpt-oss-20b"
+    ]
+  },
+  {
+    "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "provider": "meta",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "aliases": [
+      "Llama-4-Scout-17B-16E-Instruct"
+    ]
+  },
+  {
+    "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "provider": "meta",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "aliases": [
+      "Llama-4-Maverick-17B-128E-Instruct"
+    ]
+  },
+  {
+    "id": "meta-llama/Llama-3.3-70B-Instruct",
+    "provider": "meta",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
+    "aliases": [
+      "Llama-3.3-70B-Instruct"
+    ]
+  },
+  {
+    "id": "google/gemma-3-27b-it",
+    "provider": "google",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/google/gemma-3-27b-it",
+    "aliases": [
+      "gemma-3-27b-it"
+    ]
+  },
+  {
+    "id": "google/gemma-3-4b-it",
+    "provider": "google",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/google/gemma-3-4b-it",
+    "aliases": [
+      "gemma-3-4b-it"
+    ]
+  },
+  {
+    "id": "deepseek-ai/DeepSeek-V3",
+    "provider": "deepseek",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3",
+    "aliases": [
+      "DeepSeek-V3"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen2.5-72B-Instruct",
+    "provider": "qwen",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+    "aliases": [
+      "Qwen2.5-72B-Instruct"
+    ]
+  },
+  {
+    "id": "microsoft/phi-4",
+    "provider": "microsoft",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/microsoft/phi-4",
+    "aliases": [
+      "phi-4"
+    ]
+  },
+  {
+    "id": "mistral-small-2603",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "current",
+    "source": "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+    "context_window": 256000,
+    "structured_output": true
+  },
+  {
+    "id": "ministral-8b-2512",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "current",
+    "source": "https://docs.mistral.ai/resources/changelogs",
+    "structured_output": true
+  },
+  {
+    "id": "open-mistral-7b",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2025-03-30",
+    "successor": "ministral-8b-2512",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  },
+  {
+    "id": "mistralai/Mistral-7B-Instruct-v0.3",
+    "provider": "mistral",
+    "kind": "open_weights",
+    "status": "current",
+    "source": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+    "aliases": [
+      "Mistral-7B-Instruct-v0.3"
+    ]
+  },
+  {
+    "id": "open-mixtral-8x7b",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2025-03-30",
+    "successor": "mistral-small-2603",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  },
+  {
+    "id": "open-mixtral-8x22b",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2025-03-30",
+    "successor": "mistral-small-2603",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  },
+  {
+    "id": "mistral-small-2506",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2026-07-31",
+    "successor": "mistral-small-2603",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  },
+  {
+    "id": "mistral-small-2503",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2025-11-30",
+    "successor": "mistral-small-2603",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  },
+  {
+    "id": "open-mistral-nemo-2407",
+    "provider": "mistral",
+    "kind": "api",
+    "status": "eol",
+    "eol": "2026-07-31",
+    "successor": "ministral-8b-2512",
+    "source": "https://docs.mistral.ai/getting-started/models"
+  }
+]

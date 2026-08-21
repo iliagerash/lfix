@@ -1,0 +1,13 @@
+{
+  "version": "2026.08.3",
+  "generated_at": "2026-08-21",
+  "sources": [
+    "https://developers.openai.com/api/docs/deprecations",
+    "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+    "https://ai.google.dev/gemini-api/docs/deprecations",
+    "https://docs.mistral.ai/getting-started/models",
+    "https://docs.mistral.ai/models/mistral-small-4-0-26-03",
+    "https://docs.mistral.ai/resources/changelogs",
+    "https://huggingface.co/openai/gpt-oss-120b"
+  ]
+}

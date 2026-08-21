@@ -1,0 +1,11 @@
+[
+  "openai",
+  "anthropic",
+  "gemini",
+  "mistral",
+  "meta",
+  "google",
+  "deepseek",
+  "qwen",
+  "microsoft"
+]

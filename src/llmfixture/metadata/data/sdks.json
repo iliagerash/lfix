@@ -1,0 +1,20 @@
+[
+  {
+    "sdk": "openai",
+    "symbol": "ChatCompletion.create",
+    "replacement": "client.chat.completions.create",
+    "since": "1.0.0"
+  },
+  {
+    "sdk": "openai",
+    "symbol": "openai.ChatCompletion",
+    "replacement": "client.chat.completions",
+    "since": "1.0.0"
+  },
+  {
+    "sdk": "openai",
+    "symbol": "openai.Completion.create",
+    "replacement": "client.chat.completions.create",
+    "since": "1.0.0"
+  }
+]
