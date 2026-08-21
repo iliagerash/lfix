@@ -23,6 +23,7 @@ pipx install --editable .
 ```
 
 After that, `cd` into any project and run `lfix scan`. You do not need to stay in this repo.
+If the shell cannot find `lfix`, run `pipx ensurepath` and open a new terminal.
 
 Without pipx, `python3 -m pip install --user git+https://github.com/iliagerash/lfix.git` also works if `$(python3 -m site --user-base)/bin` is on your PATH.
 
