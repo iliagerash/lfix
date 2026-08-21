@@ -54,6 +54,34 @@ class _Visitor(ast.NodeVisitor):
         )
         self.generic_visit(node)
 
+    def visit_Assign(self, node: ast.Assign) -> None:
+        for target in node.targets:
+            self._model_binding(target, node.value, node.lineno, node.col_offset)
+        self.generic_visit(node)
+
+    def visit_AnnAssign(self, node: ast.AnnAssign) -> None:
+        if node.value is not None:
+            self._model_binding(node.target, node.value, node.lineno, node.col_offset)
+        self.generic_visit(node)
+
+    def _model_binding(
+        self, target: ast.expr, value: ast.expr, line: int, column: int
+    ) -> None:
+        if not isinstance(target, ast.Name):
+            return
+        if "model" not in target.id.lower():
+            return
+        if isinstance(value, ast.Constant) and isinstance(value.value, str):
+            self.calls.append(
+                CallSite(
+                    path=self.path,
+                    line=line,
+                    column=column,
+                    callee="",
+                    kwargs={"model": value.value},
+                )
+            )
+
 
 def _callee(node: ast.expr) -> str:
     if isinstance(node, ast.Name):

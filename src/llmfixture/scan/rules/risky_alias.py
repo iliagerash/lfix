@@ -1,4 +1,4 @@
-"""Flag unversioned / rolling model aliases."""
+"""Flag unversioned / rolling model aliases used as a model id."""
 
 from __future__ import annotations
 
@@ -13,12 +13,15 @@ RULE_ID = "model.risky_alias"
 def check(context: ScanContext) -> list[Finding]:
     findings: list[Finding] = []
     seen: set[tuple[str, int, str]] = set()
-    for literal in context.literals:
-        if context.metadata.is_retired(literal.value):
+    for call in context.calls:
+        raw = call.kwargs.get("model")
+        if not isinstance(raw, str):
             continue
-        if not context.metadata.is_risky_alias(literal.value):
+        if context.metadata.is_retired(raw):
             continue
-        key = (str(literal.path), literal.line, literal.value)
+        if not context.metadata.is_risky_alias(raw):
+            continue
+        key = (str(call.path), call.line, raw)
         if key in seen:
             continue
         seen.add(key)
@@ -26,15 +29,13 @@ def check(context: ScanContext) -> list[Finding]:
             Finding(
                 rule_id=RULE_ID,
                 severity=Severity.medium,
-                message=(
-                    f'Model alias "{literal.value}" tracks provider updates silently.'
-                ),
+                message=f'Model alias "{raw}" tracks provider updates silently.',
                 suggestion="Pin to a versioned model ID for reproducible behavior.",
                 location=Location(
-                    path=_display_path(context.root, literal.path),
-                    line=literal.line,
-                    column=literal.column,
-                    snippet=literal.value,
+                    path=_display_path(context.root, call.path),
+                    line=call.line,
+                    column=call.column,
+                    snippet=raw,
                 ),
             )
         )

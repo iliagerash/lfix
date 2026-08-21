@@ -8,33 +8,46 @@ from pathlib import Path
 
 import yaml
 
-from llmfixture.scan.types import StringLiteral
+from llmfixture.scan.types import CallSite, StringLiteral
 
-_ENV = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*\s*=\s*(['\"]?)([^'\"\n]*)\1\s*$")
+_ENV = re.compile(
+    r"^(?P<key>[A-Za-z_][A-Za-z0-9_]*)\s*=\s*(?P<q>['\"]?)(?P<value>[^'\"\n]*)(?P=q)\s*$"
+)
 
 
-def parse_text(path: Path, source: str) -> list[StringLiteral]:
+def parse_text(path: Path, source: str) -> tuple[list[StringLiteral], list[CallSite]]:
     suffix = path.suffix.lower()
     if path.name.startswith(".env"):
         return _from_env(path, source)
     if suffix in {".yml", ".yaml"}:
-        return _from_yaml(path, source)
+        return _from_yaml(path, source), []
     if suffix == ".json":
-        return _from_json(path, source)
-    return _from_plain(path, source)
+        return _from_json(path, source), []
+    return _from_plain(path, source), []
 
 
-def _from_env(path: Path, source: str) -> list[StringLiteral]:
+def _from_env(path: Path, source: str) -> tuple[list[StringLiteral], list[CallSite]]:
     literals: list[StringLiteral] = []
+    calls: list[CallSite] = []
     for line_no, line in enumerate(source.splitlines(), start=1):
         match = _ENV.match(line.strip())
-        if match:
-            literals.append(
-                StringLiteral(
-                    path=path, line=line_no, column=0, value=match.group(2)
+        if not match:
+            continue
+        key, value = match.group("key"), match.group("value")
+        literals.append(
+            StringLiteral(path=path, line=line_no, column=0, value=value)
+        )
+        if "model" in key.lower():
+            calls.append(
+                CallSite(
+                    path=path,
+                    line=line_no,
+                    column=0,
+                    callee="",
+                    kwargs={"model": value},
                 )
             )
-    return literals
+    return literals, calls
 
 
 def _from_yaml(path: Path, source: str) -> list[StringLiteral]:

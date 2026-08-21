@@ -77,4 +77,4 @@ def _parse(classified: ClassifiedFile) -> tuple[list[StringLiteral], list[CallSi
         return parse_python(classified.path, source)
     if suffix in _JS_SUFFIXES:
         return parse_js(classified.path, source)
-    return parse_text(classified.path, source), []
+    return parse_text(classified.path, source)

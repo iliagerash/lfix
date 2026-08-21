@@ -2,33 +2,16 @@
 
 from __future__ import annotations
 
-import fnmatch
 import os
 from collections.abc import Iterable
 from pathlib import Path
 
-from llmfixture.scan.types import ClassifiedFile, FileKind
+from pathspec import GitIgnoreSpec
 
-DEFAULT_IGNORE_DIRS = frozenset(
-    {
-        ".git",
-        ".venv",
-        "venv",
-        "node_modules",
-        "dist",
-        "build",
-        "__pycache__",
-        ".mypy_cache",
-        ".pytest_cache",
-        ".ruff_cache",
-        ".eggs",
-        "*.egg-info",
-    }
-)
+from llmfixture.scan.types import ClassifiedFile, FileKind
 
 _SOURCE_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".jsx"}
 _CONFIG_NAMES = {".env", ".env.example", ".env.local"}
-_CONFIG_SUFFIXES = {".yml", ".yaml", ".toml"}
 
 
 def discover(paths: Iterable[Path], *, cwd: Path | None = None) -> list[ClassifiedFile]:
@@ -38,9 +21,10 @@ def discover(paths: Iterable[Path], *, cwd: Path | None = None) -> list[Classifi
         root = raw if raw.is_absolute() else cwd / raw
         if not root.exists():
             continue
-        gitignore = _load_gitignore(root if root.is_dir() else root.parent)
+        walk_root = root if root.is_dir() else root.parent
+        base, spec = _ignore_spec(walk_root)
         if root.is_file():
-            classified = _classify(root, root.parent)
+            classified = _classify(root, walk_root)
             if classified is not None:
                 found[root.resolve()] = classified
             continue
@@ -49,12 +33,12 @@ def discover(paths: Iterable[Path], *, cwd: Path | None = None) -> list[Classifi
             dirnames[:] = [
                 name
                 for name in dirnames
-                if not _ignored(Path(name), gitignore, is_dir=True)
+                if name != ".git"
+                and not _ignored(spec, base, current / name, is_dir=True)
             ]
             for name in filenames:
                 path = current / name
-                rel = path.relative_to(root)
-                if _ignored(rel, gitignore, is_dir=False):
+                if _ignored(spec, base, path, is_dir=False):
                     continue
                 classified = _classify(path, root)
                 if classified is not None:
@@ -68,6 +52,8 @@ def _classify(path: Path, root: Path) -> ClassifiedFile | None:
         rel_parts = path.resolve().relative_to(root.resolve()).parts
     except ValueError:
         rel_parts = path.parts
+    if path.name.endswith(".d.ts") or ".min." in path.name:
+        return None
     if suffix in _SOURCE_SUFFIXES:
         return ClassifiedFile(path=path, kind=FileKind.source)
     if path.name.endswith(".schema.json") or (
@@ -80,38 +66,35 @@ def _classify(path: Path, root: Path) -> ClassifiedFile | None:
         or ("prompts" in rel_parts and suffix == ".txt")
     ):
         return ClassifiedFile(path=path, kind=FileKind.prompt)
-    if path.name in _CONFIG_NAMES or suffix in _CONFIG_SUFFIXES:
+    if path.name in _CONFIG_NAMES:
         return ClassifiedFile(path=path, kind=FileKind.config)
     return None
 
 
-def _load_gitignore(root: Path) -> tuple[str, ...]:
-    path = root / ".gitignore"
-    if not path.is_file():
-        return ()
-    patterns: list[str] = []
-    for raw in path.read_text(encoding="utf-8", errors="replace").splitlines():
-        line = raw.strip()
-        if not line or line.startswith("#") or line.startswith("!"):
-            continue
-        patterns.append(line)
-    return tuple(patterns)
+def _ignore_spec(start: Path) -> tuple[Path, GitIgnoreSpec]:
+    base = _git_root(start) or start.resolve()
+    gitignore = base / ".gitignore"
+    if not gitignore.is_file():
+        return base, GitIgnoreSpec.from_lines([])
+    text = gitignore.read_text(encoding="utf-8", errors="replace")
+    return base, GitIgnoreSpec.from_lines(text.splitlines())
 
 
-def _ignored(rel: Path, gitignore: tuple[str, ...], *, is_dir: bool) -> bool:
-    name = rel.name
-    if name in DEFAULT_IGNORE_DIRS or name.endswith(".egg-info"):
+def _git_root(start: Path) -> Path | None:
+    current = start.resolve()
+    if current.is_file():
+        current = current.parent
+    for path in (current, *current.parents):
+        if (path / ".git").exists():
+            return path
+    return None
+
+
+def _ignored(spec: GitIgnoreSpec, base: Path, path: Path, *, is_dir: bool) -> bool:
+    try:
+        posix = path.resolve().relative_to(base).as_posix()
+    except ValueError:
+        return False
+    if spec.match_file(posix):
         return True
-    posix = rel.as_posix()
-    for pattern in gitignore:
-        directory_only = pattern.endswith("/")
-        pat = pattern.rstrip("/")
-        if directory_only and not is_dir:
-            if any(fnmatch.fnmatch(part, pat) for part in rel.parts[:-1]):
-                return True
-            continue
-        if fnmatch.fnmatch(name, pat) or fnmatch.fnmatch(posix, pat):
-            return True
-        if any(fnmatch.fnmatch(part, pat) for part in rel.parts):
-            return True
-    return False
+    return is_dir and spec.match_file(f"{posix}/")
